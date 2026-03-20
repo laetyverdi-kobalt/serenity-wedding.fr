@@ -240,25 +240,74 @@ img {
   margin: 16px auto 0;
 }
 
-/* ===== About ===== */
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+/* ===== Presentation Sabrina ===== */
+.presentation {
+  padding: 0;
 }
 
-.about-text h3 {
+.presentation-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
+}
+
+.presentation-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 60px;
+  background: var(--color-cream);
+  text-align: center;
+}
+
+.presentation-line {
+  width: 1px;
+  height: 60px;
+  background: var(--color-dark);
+  margin-bottom: 32px;
+}
+
+.presentation-text h2 {
   font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
   color: var(--color-dark);
+  letter-spacing: 3px;
+  text-transform: uppercase;
   margin-bottom: 20px;
 }
 
-.about-text p {
-  margin-bottom: 16px;
+.presentation-tagline {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--color-text);
+  margin-bottom: 28px;
+  line-height: 1.8;
+}
+
+.presentation-about p {
   font-size: 0.95rem;
+  margin-bottom: 16px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.presentation-logo {
+  margin-top: 32px;
+  height: 120px;
+  width: auto;
+}
+
+.presentation-photo {
+  overflow: hidden;
+}
+
+.presentation-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-image img {
@@ -388,6 +437,53 @@ img {
   font-size: 0.85rem;
   color: var(--color-sage);
   font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* ===== Partenaires ===== */
+.partenaires-intro {
+  text-align: center;
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: -40px auto 48px;
+}
+
+.partenaires-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.partenaire-card {
+  background: var(--color-white);
+  padding: 32px 24px;
+  text-align: center;
+  border-radius: 4px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.partenaire-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+
+.partenaire-logo {
+  aspect-ratio: 1 !important;
+  margin-bottom: 16px;
+}
+
+.partenaire-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-dark);
+  margin-bottom: 4px;
+}
+
+.partenaire-card p {
+  font-size: 0.8rem;
+  color: var(--color-sage);
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -522,14 +618,22 @@ img {
     font-size: 0.9rem;
   }
 
-  .about-content,
+  .presentation-content,
   .contact-content {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
+  .presentation-text {
+    padding: 60px 32px;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .partenaires-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .gallery-grid {
