@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity Wedding — Wedding Planner</title>
+    <meta name="description" content="Serenity Wedding — Sabrina, votre wedding planner pour un mariage authentique et inoubliable.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FAF6F1;
+            --sand: #E8DDD3;
+            --sage: #6B7B5E;
+            --sage-light: #9CAF96;
+            --sage-dark: #556B4E;
+            --olive: #6B7B5E;
+            --brown: #6B5B4B;
+            --brown-dark: #4A3F35;
+            --warm-white: #FFFDF9;
+            --text: #3D3428;
+            --text-light: #7A6E5D;
+            --gold: #C9A96E;
+            --terracotta: #A68B6B;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--text);
+            background-color: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ============================================
+           SVG LOGO
+           ============================================ */
+        .logo-svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-svg-large {
+            width: 120px;
+            height: 120px;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(250, 246, 241, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(200, 185, 165, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .nav-logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--brown-dark);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.75rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--sage);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--brown-dark);
+            transition: all 0.3s ease;
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--sand) 50%, rgba(156, 175, 150, 0.15) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(107, 123, 94, 0.1) 0%, transparent 70%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(156, 175, 150, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-logo-wrapper {
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle-top {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--sage);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            color: var(--brown-dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+        }
+
+        .hero .script-accent {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--sage);
+            display: block;
+            margin-top: -0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 550px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .btn-primary {
+            background: var(--sage);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--sage-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(107, 123, 94, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--sage);
+            border: 1.5px solid var(--sage);
+        }
+
+        .btn-outline:hover {
+            background: var(--sage);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .hero-scroll span {
+            display: block;
+            width: 1px;
+            height: 60px;
+            background: var(--sage);
+            margin: 0 auto;
+            animation: scrollDown 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollDown {
+            0%, 100% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+            50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+        }
+
+        /* ============================================
+           SECTION STYLES
+           ============================================ */
+        section {
+            padding: 7rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--sage);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--brown-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .separator {
+            width: 60px;
+            height: 2px;
+            background: var(--sage);
+            margin: 1.5rem auto;
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about {
+            background: var(--warm-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(--sand), rgba(156, 175, 150, 0.3));
+            border-radius: 200px 200px 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .about-image-placeholder .placeholder-text {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.5;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            border: 1px solid var(--sage-light);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            color: var(--brown-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .about-text p em {
+            color: var(--sage);
+            font-style: italic;
+        }
+
+        .about-signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: var(--sage);
+            margin-top: 1.5rem;
+        }
+
+        /* ============================================
+           SERVICES SECTION
+           ============================================ */
+        .services {
+            background: var(--cream);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--warm-white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(107, 91, 75, 0.08);
+            border-color: rgba(107, 123, 94, 0.2);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(107, 123, 94, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--brown-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           GALLERY SECTION
+           ============================================ */
+        .gallery {
+            background: var(--warm-white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            background: linear-gradient(135deg, var(--sand), rgba(156, 175, 150, 0.25));
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(74, 63, 53, 0);
+            transition: background 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            background: rgba(74, 63, 53, 0.15);
+        }
+
+        .gallery-placeholder {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.35;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+           TESTIMONIALS SECTION
+           ============================================ */
+        .testimonials {
+            background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown) 100%);
+            color: white;
+        }
+
+        .testimonials .section-tag {
+            color: var(--gold);
+        }
+
+        .testimonials .section-header h2 {
+            color: white;
+        }
+
+        .testimonials .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .testimonials .separator {
+            background: var(--gold);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-card p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gold);
+        }
+
+        .testimonial-author span {
+            display: block;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.75rem;
+            margin-top: 0.3rem;
+        }
+
+        /* ============================================
+           PRICING SECTION
+           ============================================ */
+        .pricing {
+            background: var(--cream);
+        }
+
+        .pricing-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-intro p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-row-bottom {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 810px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--warm-white);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1.5px solid var(--sand);
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--sage);
+            box-shadow: 0 10px 40px rgba(107, 123, 94, 0.12);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Populaire';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--sage);
+            color: white;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0.4rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(107, 91, 75, 0.1);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            color: var(--brown-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            color: var(--sage);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .pricing-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            flex-grow: 1;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card .btn {
+            margin-top: auto;
+        }
+
+        /* ============================================
+           BLOG SECTION
+           ============================================ */
+        .blog {
+            background: var(--warm-white);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .blog-card {
+            background: var(--cream);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(107, 91, 75, 0.08);
+        }
+
+        .blog-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--sand), rgba(156, 175, 150, 0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-image .placeholder-text {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.3;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-date {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--sage);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .blog-card h3 {
+            font-size: 1.3rem;
+            color: var(--brown-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .blog-card p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        .blog-link {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--sage);
+            font-weight: 500;
+        }
+
+        .blog-link:hover {
+            color: var(--sage-dark);
+        }
+
+        /* ============================================
+           FAQ SECTION
+           ============================================ */
+        .faq {
+            background: var(--cream);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--sand);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--brown-dark);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--sage);
+        }
+
+        .faq-question .faq-toggle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+            color: var(--sage);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-answer.open {
+            max-height: 300px;
+            padding-top: 1rem;
+        }
+
+        .faq-answer p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        .contact {
+            background: var(--warm-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            color: var(--brown-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .contact-details .icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(107, 123, 94, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            padding: 1rem 1.2rem;
+            border: 1px solid var(--sand);
+            background: var(--cream);
+            color: var(--text);
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--sage);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--brown-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--sage-light);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col a {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--sage-light);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0;
+        }
+
+        .social-link:hover {
+            background: var(--sage);
+            border-color: var(--sage);
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3.5rem; }
+            .hero .script-accent { font-size: 2.8rem; }
+            .services-grid, .testimonials-grid, .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .pricing-row-bottom {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--cream);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 { font-size: 2.8rem; }
+            .hero .script-accent { font-size: 2.2rem; }
+            .section-header h2 { font-size: 2.2rem; }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .services-grid,
+            .testimonials-grid,
+            .pricing-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-row-bottom {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 200px);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .script-accent { font-size: 1.8rem; }
+            section { padding: 4rem 0; }
+            .container { padding: 0 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav>
+        <div class="container">
+            <a href="#accueil" class="nav-brand">
+                <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" stroke="#6B7B5E" stroke-width="1" opacity="0.3"/>
+                    <text x="50" y="42" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="28" font-weight="500" fill="#4A3F35" letter-spacing="2">SW</text>
+                    <text x="50" y="70" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="7" font-weight="400" fill="#6B7B5E" letter-spacing="4" text-transform="uppercase">SERENITY WEDDING</text>
+                    <line x1="30" y1="50" x2="70" y2="50" stroke="#6B7B5E" stroke-width="0.8"/>
+                </svg>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">A propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#avis">Avis</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <div class="hero-logo-wrapper">
+                <svg class="logo-svg-large" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" stroke="#6B7B5E" stroke-width="0.8" opacity="0.4"/>
+                    <text x="50" y="42" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="28" font-weight="500" fill="#4A3F35" letter-spacing="2">SW</text>
+                    <text x="50" y="70" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="7" font-weight="400" fill="#6B7B5E" letter-spacing="4">SERENITY WEDDING</text>
+                    <line x1="30" y1="50" x2="70" y2="50" stroke="#6B7B5E" stroke-width="0.8"/>
+                </svg>
+            </div>
+            <div class="hero-subtitle-top">Wedding Planner</div>
+            <h1>Serenity</h1>
+            <span class="script-accent">Wedding</span>
+            <p>Chaque histoire d'amour merite d'etre celebree avec sincerite et beaute. Je cree le mariage qui vous ressemble.</p>
+            <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
+        </div>
+        <div class="hero-scroll">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about" id="apropos">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <span class="placeholder-text">Photo de Sabrina</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span class="section-tag">Qui suis-je</span>
+                    <h3>Sabrina, votre wedding planner</h3>
+                    <p>Je m'appelle Sabrina, et j'ai fonde Serenity Wedding avec une conviction : <em>chaque histoire d'amour merite d'etre celebree avec sincerite et beaute.</em></p>
+                    <p>Mon approche est a la fois humaine et structuree : j'ecoute, je conseille et je construis chaque mariage comme une experience unique, pensee pour refleter votre couple.</p>
+                    <p>De l'organisation complete a la simple coordination du jour J, je m'adapte a vos besoins pour que vous puissiez vivre pleinement chaque instant de cette journee exceptionnelle.</p>
+                    <div class="about-signature">Sabrina</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Ce que je propose</span>
+                <h2>Mes Services</h2>
+                <div class="separator"></div>
+                <p>Un accompagnement sur mesure, adapte a chaque couple et a chaque projet de mariage.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">&#x1F4CB;</div>
+                    <h3>Organisation de A a Z</h3>
+                    <p>Une prise en charge complete de votre mariage, du concept a la coordination du jour J. Vous profitez pleinement de chaque instant, je gere le reste.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#x1F91D;</div>
+                    <h3>Organisation partielle</h3>
+                    <p>Vous avez deja avance dans vos preparatifs ? Je reprends le relais pour finaliser l'organisation, harmoniser vos choix et assurer une coherence globale.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#x2728;</div>
+                    <h3>Coordination du jour J</h3>
+                    <p>Vous avez tout planifie, je veille a ce que tout se deroule parfaitement. Gestion des prestataires, planning, accueil des invites et gestion des imprevus.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#x1F4DE;</div>
+                    <h3>Coordination partielle</h3>
+                    <p>Accompagnement avant le grand jour sans presence sur place. Je contacte vos prestataires, cree le deroule et assure la mise en place jusqu'a la veille.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#x1F4BB;</div>
+                    <h3>E-Wedding</h3>
+                    <p>Ideale pour les couples autonomes ou vivant loin. Accompagnement complet en visio avec conseils personnalises, outils de planification et suivi regulier.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#x1F3A8;</div>
+                    <h3>Decoration & Scenographie</h3>
+                    <p>Creation d'un univers visuel unique qui reflete votre personnalite. Fleurs, mobilier, papeterie, eclairages — chaque detail raconte votre histoire.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALLERY ========== -->
+    <section class="gallery" id="galerie">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nos realisations</span>
+                <h2>Galerie</h2>
+                <div class="separator"></div>
+                <p>Quelques aperçus de nos plus belles creations. Chaque mariage est une oeuvre unique.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><span class="gallery-placeholder">Photo 1</span></div>
+                <div class="gallery-item"><span class="gallery-placeholder">Photo 2</span></div>
+                <div class="gallery-item"><span class="gallery-placeholder">Photo 3</span></div>
+                <div class="gallery-item"><span class="gallery-placeholder">Photo 4</span></div>
+                <div class="gallery-item"><span class="gallery-placeholder">Photo 5</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials" id="avis">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Ils nous font confiance</span>
+                <h2>Temoignages</h2>
+                <div class="separator"></div>
+                <p>Les mots de nos couples sont notre plus belle recompense.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                    <p>"Sabrina a transforme notre vision en une realite encore plus belle que ce qu'on imaginait. Chaque detail etait parfait, de la ceremonie au dessert. Un immense merci !"</p>
+                    <div class="testimonial-author">
+                        Marie & Thomas
+                        <span>Mariage en Provence — Juin 2025</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                    <p>"Une ecoute incroyable et un professionnalisme rare. On s'est sentis accompagnes a chaque etape. Le jour J etait magique, sans aucun stress. On recommande les yeux fermes."</p>
+                    <div class="testimonial-author">
+                        Sophie & Antoine
+                        <span>Mariage champetre — Septembre 2025</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                    <p>"Nous revions d'un mariage boheme en pleine nature, et c'est exactement ce que nous avons eu. Sabrina est a l'ecoute, creative et incroyablement organisee. Merci pour tout !"</p>
+                    <div class="testimonial-author">
+                        Camille & Julien
+                        <span>Mariage en foret — Juillet 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRICING ========== -->
+    <section class="pricing" id="tarifs">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Formules proposees</span>
+                <h2>Tarifs 2026-2027</h2>
+                <div class="separator"></div>
+                <p>Des formules adaptees a vos besoins et votre budget, toujours avec la meme passion et le meme engagement.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <h3>Organisation de A a Z</h3>
+                    <div class="pricing-price">2 900&euro;</div>
+                    <p class="pricing-desc">Une prise en charge complete de votre mariage, du concept a la coordination du jour J. Vous profitez pleinement de chaque instant, je gere le reste.</p>
+                    <a href="#contact" class="btn btn-primary">Nous contacter</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Organisation partielle</h3>
+                    <div class="pricing-price">2 200&euro;</div>
+                    <p class="pricing-desc">Une formule ideale si vous avez deja avance dans vos preparatifs. Je reprends le relais pour finaliser l'organisation, harmoniser vos choix et assurer une coherence globale pour un mariage fluide et elegant.</p>
+                    <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Coordination du jour J</h3>
+                    <div class="pricing-price">1 900&euro;</div>
+                    <p class="pricing-desc">Vous avez tout planifie, je veille a ce que tout se deroule parfaitement le jour de votre mariage. Gestion des prestataires, respect du planning, accueil des invites et gestion des imprevus.</p>
+                    <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                </div>
+            </div>
+            <div class="pricing-row-bottom">
+                <div class="pricing-card">
+                    <h3>Coordination partielle</h3>
+                    <div class="pricing-price">1 300&euro;</div>
+                    <p class="pricing-desc">Accompagnement avant le grand jour, sans presence sur place. Je prends contact avec vos prestataires, je cree le deroule du mariage, j'assure la mise en place de la coordination jusqu'a la veille, puis le relais est confie a un membre de votre famille choisi ensemble.</p>
+                    <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>E-Wedding</h3>
+                    <div class="pricing-price">980&euro;</div>
+                    <p class="pricing-desc">Ideale pour les couples autonomes ou vivant loin. Accompagnement complet en visio et a distance avec conseils personnalises, outils de planification et un suivi regulier — sans presence terrain.</p>
+                    <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BLOG ========== -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Inspirations & conseils</span>
+                <h2>Le Blog</h2>
+                <div class="separator"></div>
+                <p>Tendances, inspirations et conseils pour preparer votre mariage en toute serenite.</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="placeholder-text">Image article</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">15 Mars 2026</span>
+                        <h3>10 tendances mariage boheme pour 2026</h3>
+                        <p>Decouvrez les tendances qui feront de votre mariage boheme un moment unique et intemporel cette annee.</p>
+                        <a href="#" class="blog-link">Lire la suite &rarr;</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="placeholder-text">Image article</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">28 Fevrier 2026</span>
+                        <h3>Comment choisir son lieu de reception ?</h3>
+                        <p>Le lieu de reception donne le ton de votre mariage. Voici nos conseils pour trouver l'endroit parfait.</p>
+                        <a href="#" class="blog-link">Lire la suite &rarr;</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="placeholder-text">Image article</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">10 Fevrier 2026</span>
+                        <h3>Les fleurs de saison pour un mariage eco-responsable</h3>
+                        <p>Opter pour des fleurs de saison, c'est allier beaute naturelle et engagement ecologique.</p>
+                        <a href="#" class="blog-link">Lire la suite &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Questions frequentes</span>
+                <h2>FAQ</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Combien de temps a l'avance faut-il vous contacter ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Idealement, 12 a 18 mois avant votre mariage pour une organisation complete. Pour une coordination Jour J, 3 a 6 mois suffisent. Mais chaque situation est unique — n'hesitez pas a me contacter, je trouverai toujours une solution !</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Quelle est la difference entre coordination du jour J et coordination partielle ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La coordination du jour J inclut ma presence le jour de votre mariage pour gerer prestataires, planning et imprevus. La coordination partielle est un accompagnement en amont (contact prestataires, deroule, mise en place) mais sans ma presence le jour J — le relais est confie a un proche de confiance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Peut-on personnaliser les formules ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolument ! Mes formules sont une base, mais chaque mariage est unique. Lors de notre premier rendez-vous, nous construisons ensemble une offre parfaitement adaptee a vos besoins et votre budget.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Qu'est-ce que la formule E-Wedding ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La formule E-Wedding est ideale pour les couples autonomes ou vivant loin. Je vous guide pas a pas dans l'organisation en visio, avec des conseils personnalises, des outils de planification et un suivi regulier — le tout a distance, sans presence sur le terrain.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Le premier rendez-vous est-il gratuit ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui ! Le premier rendez-vous decouverte est offert et sans engagement. C'est l'occasion de faire connaissance, d'ecouter votre projet et de voir si le courant passe. On peut se rencontrer en personne ou en visio.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Travaillez-vous uniquement en France ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Non ! J'organise aussi des mariages a l'etranger. Les frais de deplacement sont simplement ajoutes au devis. N'hesitez pas a me contacter pour en discuter.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Parlons de votre projet</span>
+                <h2>Contact</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Commencons l'aventure ensemble</h3>
+                    <p>Vous avez un projet de mariage ? Envoyez-moi un message et je vous recontacterai sous 48h pour organiser un premier rendez-vous decouverte gratuit.</p>
+                    <ul class="contact-details">
+                        <li>
+                            <span class="icon">&#x1F4F1;</span>
+                            06.37.40.21.08
+                        </li>
+                        <li>
+                            <span class="icon">&#x2709;</span>
+                            serenity.wedding.sv@gmail.com
+                        </li>
+                        <li>
+                            <span class="icon">&#x1F4F7;</span>
+                            @serenitywedding
+                        </li>
+                        <li>
+                            <span class="icon">&#x1F4CD;</span>
+                            France & International
+                        </li>
+                    </ul>
+                </div>
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prenom">Prenom</label>
+                            <input type="text" id="prenom" name="prenom" placeholder="Votre prenom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date souhaitee</label>
+                            <input type="text" id="date" name="date" placeholder="Ex : Juin 2027">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="formule">Formule souhaitee</label>
+                        <select id="formule" name="formule">
+                            <option value="">Selectionnez une formule</option>
+                            <option value="complet">Organisation de A a Z — 2 900&#8364;</option>
+                            <option value="partiel">Organisation partielle — 2 200&#8364;</option>
+                            <option value="jourj">Coordination du jour J — 1 900&#8364;</option>
+                            <option value="coordpartielle">Coordination partielle — 1 300&#8364;</option>
+                            <option value="ewedding">E-Wedding — 980&#8364;</option>
+                            <option value="autre">Je ne sais pas encore</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre message</label>
+                        <textarea id="message" name="message" placeholder="Parlez-moi de votre projet de mariage..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Serenity Wedding</h3>
+                    <p>Votre wedding planner pour un mariage authentique et inoubliable. Chaque histoire d'amour merite d'etre celebree avec sincerite et beaute.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">Ig</a>
+                        <a href="#" class="social-link">Fb</a>
+                        <a href="#" class="social-link">Pi</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#apropos">A propos</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#galerie">Galerie</a></li>
+                        <li><a href="#tarifs">Tarifs</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:0637402108">06.37.40.21.08</a></li>
+                        <li><a href="mailto:serenity.wedding.sv@gmail.com">serenity.wedding.sv@gmail.com</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Mentions legales</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Serenity Wedding — Sabrina. Tous droits reserves.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // FAQ accordion
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const toggle = button.querySelector('.faq-toggle');
+            const isOpen = answer.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-toggle').forEach(t => t.textContent = '+');
+
+            // Open clicked if it was closed
+            if (!isOpen) {
+                answer.classList.add('open');
+                toggle.textContent = '\u2212';
+            }
+        }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to cards
+        document.querySelectorAll('.service-card, .testimonial-card, .pricing-card, .blog-card, .faq-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Sabrina vous recontactera tres vite.');
+            e.target.reset();
+        }
+    </script>
+
+</body>
+</html>

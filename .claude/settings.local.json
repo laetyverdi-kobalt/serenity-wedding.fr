@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm i:*)",
+      "Bash(claude doctor:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(brew install:*)",
+      "Bash(ssh-keygen:*)",
+      "Bash(xxd ~/.ssh/id_ed25519_github.pub)",
+      "WebFetch(domain:serenity-wedding.netlify.app)",
+      "WebFetch(domain:cdn0.mariages.net)",
+      "WebFetch(domain:www.instagram.com)",
+      "Bash(cp \"WhatsApp Image 2026-03-20 at 20.07.53.jpeg\" hero.jpg)",
+      "Bash(cp \"WhatsApp Image 2026-03-20 at 20.10.12.jpeg\" deco.jpg)",
+      "WebFetch(domain:www.google.com)",
+      "Bash(sips:*)",
+      "WebFetch(domain:www.mariages.net)",
+      "WebFetch(domain:tiphenkys.fr)",
+      "WebFetch(domain:app.netlify.com)",
+      "Bash(for f:*)",
+      "Bash(do sed:*)",
+      "Bash(done)"
+    ]
+  }
+}
