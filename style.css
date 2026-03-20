@@ -719,19 +719,19 @@ img {
 .service-detail-includes ul {
   list-style: none;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
 .service-detail-includes li {
   background: var(--color-white);
-  padding: 12px 24px;
-  border-radius: 50px;
+  padding: 18px 24px;
+  border-radius: 12px;
   font-size: 0.9rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   border: 1px solid var(--color-blush);
+  text-align: center;
   transition: background 0.3s, border-color 0.3s;
 }
 
