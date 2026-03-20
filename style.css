@@ -716,7 +716,7 @@ img {
 }
 
 .service-detail-includes li::before {
-  content: '\\2714';
+  content: '\2714';
   position: absolute;
   left: 0;
   color: var(--color-sage);
