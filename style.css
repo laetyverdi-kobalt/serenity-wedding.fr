@@ -368,6 +368,13 @@ img {
   text-align: center;
 }
 
+.testimonial-stars {
+  color: var(--color-sage);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
 .testimonial-text {
   font-family: var(--font-heading);
   font-size: 1.1rem;
