@@ -708,18 +708,33 @@ img {
 }
 
 .service-detail-includes li {
-  padding: 12px 0;
+  padding: 12px 0 12px 0;
   border-bottom: 1px solid var(--color-blush);
   font-size: 0.95rem;
-  padding-left: 24px;
-  position: relative;
 }
 
-.service-detail-includes li::before {
-  content: '\2714';
-  position: absolute;
-  left: 0;
-  color: var(--color-sage);
+/* ===== Other services nav ===== */
+.other-services {
+  background: var(--color-blush);
+  padding: 60px 0;
+}
+
+.other-services .section-title {
+  margin-bottom: 40px;
+}
+
+.other-services .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.other-services .service-card {
+  padding: 32px 24px;
+}
+
+.other-services .service-card .service-price {
+  font-size: 1.2rem;
 }
 
 .service-detail-cta {
