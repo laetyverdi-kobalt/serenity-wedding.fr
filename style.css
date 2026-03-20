@@ -467,9 +467,12 @@ img {
   box-shadow: 0 12px 40px rgba(0,0,0,0.06);
 }
 
-.partenaire-logo {
-  aspect-ratio: 1 !important;
-  margin-bottom: 16px;
+.partenaire-logo-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin: 0 auto 16px;
+  border-radius: 50%;
 }
 
 .partenaire-card h3 {
