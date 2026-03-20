@@ -69,7 +69,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 130px;
+  height: 140px;
 }
 
 .logo {
@@ -78,8 +78,9 @@ img {
 }
 
 .logo-img {
-  height: 100px;
-  width: auto;
+  height: 110px;
+  width: 220px;
+  object-fit: contain;
 }
 
 .nav-links {
