@@ -1,10 +1,11 @@
 /* ===== Variables & Reset ===== */
 :root {
-  --color-cream: #f7f7f5;
-  --color-blush: #eae8e3;
-  --color-rose: #a8b5a0;
-  --color-gold: #3b5e3a;
-  --color-dark: #2c2c2c;
+  --color-cream: #f5f2ed;
+  --color-blush: #eae5de;
+  --color-rose: #c5cfc0;
+  --color-sage: #9cad8f;
+  --color-sage-dark: #7a9170;
+  --color-dark: #3a3a3a;
   --color-text: #555;
   --color-white: #fff;
   --font-heading: 'Cormorant Garamond', Georgia, serif;
@@ -81,14 +82,9 @@ img {
 }
 
 .logo-img {
-  height: 52px;
+  height: 56px;
   width: auto;
-  filter: brightness(0) invert(1);
-  transition: filter 0.3s;
-}
-
-.navbar.scrolled .logo-img {
-  filter: none;
+  transition: opacity 0.3s;
 }
 
 .nav-links {
@@ -117,7 +113,7 @@ img {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--color-gold);
+  background: var(--color-sage);
   transition: width 0.3s;
 }
 
@@ -155,7 +151,7 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, #3b5e3a 0%, #4a7248 50%, #5a8658 100%);
+  background: linear-gradient(135deg, #8a9e82 0%, #9cad8f 50%, #b0c4a8 100%);
   overflow: hidden;
 }
 
@@ -221,12 +217,12 @@ img {
 }
 
 .section .btn {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
+  border-color: var(--color-sage);
+  color: var(--color-sage);
 }
 
 .section .btn:hover {
-  background: var(--color-gold);
+  background: var(--color-sage);
   color: var(--color-white);
 }
 
@@ -254,7 +250,7 @@ img {
   display: block;
   width: 60px;
   height: 1px;
-  background: var(--color-gold);
+  background: var(--color-sage);
   margin: 16px auto 0;
 }
 
@@ -316,7 +312,7 @@ img {
 
 .service-icon {
   font-size: 2rem;
-  color: var(--color-gold);
+  color: var(--color-sage);
   margin-bottom: 20px;
 }
 
@@ -379,7 +375,7 @@ img {
 
 .testimonial-author {
   font-size: 0.85rem;
-  color: var(--color-gold);
+  color: var(--color-sage);
   font-weight: 500;
   letter-spacing: 1px;
 }
@@ -419,7 +415,7 @@ img {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--color-gold);
+  color: var(--color-sage);
   font-weight: 500;
   transition: opacity 0.3s;
 }
@@ -451,7 +447,7 @@ img {
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--color-gold);
+  border-color: var(--color-sage);
 }
 
 .contact-form textarea {
@@ -460,12 +456,12 @@ img {
 
 .contact-form .btn {
   align-self: flex-start;
-  border-color: var(--color-gold);
-  color: var(--color-gold);
+  border-color: var(--color-sage);
+  color: var(--color-sage);
 }
 
 .contact-form .btn:hover {
-  background: var(--color-gold);
+  background: var(--color-sage);
   color: var(--color-white);
 }
 
