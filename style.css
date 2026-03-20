@@ -834,22 +834,37 @@ img {
     font-size: 0.9rem;
   }
 
-  .presentation-content,
+  .presentation-content {
+    grid-template-columns: 1fr;
+  }
+
+  .presentation-text {
+    padding: 48px 24px;
+  }
+
+  .presentation-photo {
+    height: 400px;
+  }
+
+  .presentation-logo {
+    height: 160px;
+  }
+
+  .presentation-tagline {
+    font-size: 1.1rem;
+  }
+
   .contact-content {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .presentation-text {
-    padding: 60px 32px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
+  .services-grid .service-card {
+    width: 100%;
   }
 
   .partenaires-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
 
   .gallery-grid {
@@ -862,5 +877,43 @@ img {
 
   .section {
     padding: 60px 0;
+  }
+
+  .hero {
+    margin-top: 100px;
+  }
+
+  .nav-container {
+    height: 100px;
+  }
+
+  .logo-img {
+    height: 80px;
+    width: 160px;
+  }
+
+  .service-hero {
+    margin-top: 100px;
+    height: 40vh;
+  }
+
+  .service-detail-includes ul {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-intro {
+    padding: 32px 24px;
+  }
+
+  .service-detail-cta {
+    padding: 32px 24px;
+  }
+
+  .other-services .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formules-subtitle {
+    margin-top: -36px;
   }
 }
