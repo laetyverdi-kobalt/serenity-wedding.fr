@@ -276,7 +276,7 @@ img {
   color: var(--color-dark);
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .presentation-tagline {
