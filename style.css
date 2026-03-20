@@ -466,9 +466,14 @@ img {
 }
 
 .partenaires-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 32px;
+}
+
+.partenaire-card {
+  width: calc(25% - 24px);
 }
 
 .partenaire-card {
@@ -863,8 +868,8 @@ img {
     width: 100%;
   }
 
-  .partenaires-grid {
-    grid-template-columns: 1fr 1fr;
+  .partenaire-card {
+    width: calc(50% - 16px);
   }
 
   .gallery-grid {
