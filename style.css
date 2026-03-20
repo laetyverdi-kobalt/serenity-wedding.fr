@@ -355,13 +355,24 @@ img {
   background: var(--color-white);
   padding: 48px 36px;
   text-align: center;
-  border-radius: 4px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 12px;
+  border: 1px solid var(--color-blush);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s, border-color 0.3s;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+  background: var(--color-sage);
+  border-color: var(--color-sage);
+}
+
+.service-card:hover h3,
+.service-card:hover p,
+.service-card:hover .service-icon,
+.service-card:hover .service-price,
+.service-card:hover .service-link {
+  color: var(--color-white);
 }
 
 .service-icon {
@@ -620,12 +631,21 @@ img {
 
 .service-link {
   display: inline-block;
-  margin-top: 12px;
-  font-size: 0.8rem;
+  margin-top: 16px;
+  padding: 8px 20px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--color-sage);
+  color: var(--color-white);
+  background: var(--color-sage);
+  border-radius: 50px;
   font-weight: 500;
+  transition: background 0.3s;
+}
+
+.service-card:hover .service-link {
+  background: var(--color-white);
+  color: var(--color-sage);
 }
 
 /* ===== Service detail pages ===== */
